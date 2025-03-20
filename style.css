@@ -1,0 +1,24 @@
+article {
+    background: #333;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+article h3 {
+    color: #00bcd4;
+}
+
+article a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #00bcd4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+article a:hover {
+    background: #0097a7;
+}
