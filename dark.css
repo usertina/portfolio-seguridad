@@ -2,15 +2,86 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #121212;
-    color: white;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Azul oscuro */
+    color: white;   
+}
+
+.container {
+    max-width: 100px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    margin-left: 20px;  /* Margen en el lado izquierdo */
+    margin-right: 20px; /* Margen en el lado derecho */
 }
 
 header {
     text-align: center;
-    padding: 20px;
-    background: #1e3c72;
-    color: white;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #a2cffe; /* Azul claro */
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    margin: 5px 0;
+    color: #a2cffe; /* Azul claro */
+}
+
+h3 {
+    border-bottom: 2px solid #a2cffe; /* Azul claro */
+    padding-bottom: 5px;
+    color: #a2cffe;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+a {
+    color: #a2cffe;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.contacto p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+ul {
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 5px;
 }
 
 button {
@@ -25,41 +96,7 @@ button {
 }
 
 button:hover {
-    background: #ccc;
-}
-
-article {
-    background: #333;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-article h3 {
-    color: #a2cffe;
-}
-
-article a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #1e6091;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-article a:hover {
-    background: #144a72;
-}
-
-#contacto a {
-    text-decoration: none;
-    color: #a2cffe;
-}
-
-#contacto a:hover {
-    color: #6daedb;
+    background: #ddd;
 }
 footer {
     text-align: center;
