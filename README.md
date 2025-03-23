@@ -3,7 +3,7 @@
 Este es mi portafolio de seguridad informática, donde muestro proyectos relacionados con auditorías, análisis de vulnerabilidades y pruebas de penetración.  
 
 ## 🌍 Demo en vivo  
-Puedes ver el sitio en acción aquí: [Netlify Deployment](https://tina-calleja-cv.netlify.app)  
+Puedes ver el sitio en acción aquí: [Netlify Deployment](https://portfolio-seguridad-tina-calleja.netlify.app/)  
 
 ---
 
