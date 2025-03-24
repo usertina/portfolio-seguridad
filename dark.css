@@ -7,14 +7,14 @@ body {
 }
 
 .container {
-    max-width: 100px;
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
     background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    margin-left: 20px;  /* Margen en el lado izquierdo */
-    margin-right: 20px; /* Margen en el lado derecho */
+    margin-left: 40px;  /* Margen en el lado izquierdo */
+    margin-right: 40px; /* Margen en el lado derecho */
 }
 
 header {
@@ -104,4 +104,29 @@ footer {
     background:#1e3c72;
     color: white;
     margin-top: 20px;
+}
+#lang-es, #lang-en {
+    background: #f5f5f5;
+    color: #333;
+}
+
+#lang-es:hover, #lang-en:hover {
+    background: #ddd;
+}
+.language-switch {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lang-option {
+    color: white;
+    padding: 5px;
+}
+
+.lang-option:hover {
+    text-decoration: underline;
 }

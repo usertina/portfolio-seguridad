@@ -5,6 +5,24 @@ body {
     background: linear-gradient(135deg, #ccd9e0, #a3b8c9); /* Azul grisáceo */
     color: #333;
 }
+/* Contenedor de los botones de idioma */
+.language-switch {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1e3c72;
+    cursor: pointer;
+}
+
+.language-switch span {
+    margin: 0 5px;
+}
+
+.language-switch span:hover {
+    text-decoration: underline;
+}
 
 .container {
     max-width: 800px;
