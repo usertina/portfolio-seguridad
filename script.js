@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cambio de idioma
     const langEsButton = document.getElementById("lang-es");
     const langEnButton = document.getElementById("lang-en");
+    const langEuButton = document.getElementById("lang-eu");
+  
 
     const translateToSpanish = () => {
         document.getElementById("portfolio-title").textContent = "Mi Portfolio de Seguridad Informática";
@@ -41,6 +43,23 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("gmail-link").textContent = "Gmail";
         document.getElementById("footer-contact").innerHTML = 'Contacto: <a href="mailto:agustinacalleja@gmail.com">agustinacalleja@gmail.com</a> |';
     };
+    const translateToBasque = () => {
+        document.getElementById("portfolio-title").textContent = "Nire Zibersegurtasun Portfolioa";
+        document.getElementById("portfolio-description").textContent = "Proiektuak, ahultasun-analisiak eta auditoretzak";
+        document.getElementById("about-title").textContent = "Niri buruz";
+        document.getElementById("about-description").textContent = "Web garatzailea, zibersegurtasunean espezializatua. Zibersegurtasuna eta ahultasunen analisia dira nire pasioak.";
+        document.getElementById("projects-title").textContent = "Proiektuak";
+        document.getElementById("network-security-analysis-title").textContent = "Sareko Segurtasun Analisia";
+        document.getElementById("network-security-description").textContent = "Sarearen eskaneatzea, irekitako portuen detekzioa eta ahultasunen ebaluazioa, Nmap, Wireshark eta Nessus bezalako tresnak erabiliz.";
+        document.getElementById("view-report-link").textContent = "Ikusi Txostena";
+        document.getElementById("contact-title").textContent = "Kontaktua";
+        document.getElementById("contact-description").textContent = "Hona hemen nire plataformak:";
+        document.getElementById("linkedin-link").textContent = "LinkedIn";
+        document.getElementById("github-link").textContent = "GitHub";
+        document.getElementById("gmail-link").textContent = "Gmail";
+        document.getElementById("footer-contact").innerHTML = 'Kontaktua: <a href="mailto:agustinacalleja@gmail.com">agustinacalleja@gmail.com</a> |';
+    };
+    
 
     const translateToEnglish = () => {
         document.getElementById("portfolio-title").textContent = "My Cybersecurity Portfolio";
@@ -61,4 +80,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     langEsButton.addEventListener("click", translateToSpanish);
     langEnButton.addEventListener("click", translateToEnglish);
+    langEuButton.addEventListener("click", translateToBasque);
 });
