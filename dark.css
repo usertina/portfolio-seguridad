@@ -105,12 +105,12 @@ footer {
     color: white;
     margin-top: 20px;
 }
-#lang-es, #lang-en {
+#lang-es, #lang-en,#lang-eu{
     background: #f5f5f5;
     color: #333;
 }
 
-#lang-es:hover, #lang-en:hover {
+#lang-es:hover, #lang-en:hover, #lang-eu:hover{
     background: #ddd;
 }
 .language-switch {
