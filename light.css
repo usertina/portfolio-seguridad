@@ -104,13 +104,14 @@ section {
 
 button {
     display: block;
-    margin: 20px auto;
+    margin: 5px;
     padding: 10px 15px;
-    background: #1e3c72;
-    color: white;
+    background: #2a5298;
+    color: #1e3c72;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 button:hover {

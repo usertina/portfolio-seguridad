@@ -6,18 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
         themeStyle.setAttribute("href", savedTheme);
-        themeToggleButton.textContent = savedTheme === "dark.css" ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
+        themeToggleButton.textContent = savedTheme === "dark.css" ? "☀️" : "🌙";
     }
 
     themeToggleButton.addEventListener("click", function () {
         if (themeStyle.getAttribute("href") === "light.css") {
             themeStyle.setAttribute("href", "dark.css");
             localStorage.setItem("theme", "dark.css");
-            themeToggleButton.textContent = "☀️ Modo Claro";
+            themeToggleButton.textContent = "☀️";
         } else {
             themeStyle.setAttribute("href", "light.css");
             localStorage.setItem("theme", "light.css");
-            themeToggleButton.textContent = "🌙 Modo Oscuro";
+            themeToggleButton.textContent = "🌙";
         }
     });
 
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 contactTitle: "Contacto",
                 contactDescription: "Puedes encontrarme en las siguientes plataformas:",
                 linkedin: "LinkedIn",
+                cv: "Currículum Vitae",
                 github: "GitHub",
                 gmail: "Gmail",
                 footerContact: "Contacto: "
@@ -56,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 contactTitle: "Contact",
                 contactDescription: "You can find me on the following platforms:",
                 linkedin: "LinkedIn",
+                cv: "Currículum Vitae",
                 github: "GitHub",
                 gmail: "Gmail",
                 footerContact: "Contact: "
@@ -72,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 contactTitle: "Kontaktua",
                 contactDescription: "Hona hemen nire plataformak:",
                 linkedin: "LinkedIn",
+                cv: "Currículum Vitae",
                 github: "GitHub",
                 gmail: "Gmail",
                 footerContact: "Kontaktua: "
@@ -93,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Actualizar solo el texto de los enlaces sin eliminar los iconos
         updateLinkText("linkedin-link", texts[lang].linkedin);
+        updateLinkText("cv-link", texts[lang].cv);
         updateLinkText("github-link", texts[lang].github);
         updateLinkText("gmail-link", texts[lang].gmail);
     }
