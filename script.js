@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 projectsTitle: "Proyectos",
                 networkSecurityTitle: "Análisis de Seguridad en Red",
                 networkSecurityDescription: "Escaneo de red, detección de puertos abiertos y evaluación de vulnerabilidades utilizando herramientas como Nmap, Wireshark y Nessus.",
+                securityAuditTitle: "Auditoría de Seguridad",
+                securityAuditDescription: "Evaluación detallada de la seguridad en sistemas informáticos, identificando vulnerabilidades y proponiendo soluciones efectivas.",
+                securityAuditLink: "Ver Informe", 
                 viewReport: "Ver Informe",
                 contactTitle: "Contacto",
                 contactDescription: "Puedes encontrarme en las siguientes plataformas:",
@@ -53,6 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 projectsTitle: "Projects",
                 networkSecurityTitle: "Network Security Analysis",
                 networkSecurityDescription: "Network scanning, open port detection, and vulnerability assessment using tools like Nmap, Wireshark, and Nessus.",
+                securityAuditTitle: "Security Audit",
+                securityAuditDescription: "Detailed evaluation of computer system security, identifying vulnerabilities and proposing effective solutions.",
+                securityAuditLink: "View Report",
                 viewReport: "View Report",
                 contactTitle: "Contact",
                 contactDescription: "You can find me on the following platforms:",
@@ -70,6 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 projectsTitle: "Proiektuak",
                 networkSecurityTitle: "Sareko Segurtasun Analisia",
                 networkSecurityDescription: "Sarearen eskaneatzea, irekitako portuen detekzioa eta ahultasunen ebaluazioa, Nmap, Wireshark eta Nessus bezalako tresnak erabiliz.",
+                securityAuditTitle: "Segurtasun Auditoria",
+                securityAuditDescription: "Sistema informatikoen segurtasunaren ebaluazio zehatza, ahultasunak identifikatuz eta irtenbide eraginkorrak proposatuz.",
+                securityAuditLink: "Ikusi Txostena"
                 viewReport: "Ikusi Txostena",
                 contactTitle: "Kontaktua",
                 contactDescription: "Hona hemen nire plataformak:",
@@ -88,6 +97,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("projects-title").textContent = texts[lang].projectsTitle;
         document.getElementById("network-security-analysis-title").textContent = texts[lang].networkSecurityTitle;
         document.getElementById("network-security-description").textContent = texts[lang].networkSecurityDescription;
+        document.getElementById("security-audit-title").textContent = texts[lang].securityAuditTitle;
+        document.getElementById("security-audit-description").textContent = texts[lang].securityAuditDescription;
+        document.getElementById("security-audit-link").textContent = texts[lang].securityAuditLink;
         document.getElementById("view-report-link").textContent = texts[lang].viewReport;
         document.getElementById("contact-title").textContent = texts[lang].contactTitle;
         document.getElementById("contact-description").textContent = texts[lang].contactDescription;
