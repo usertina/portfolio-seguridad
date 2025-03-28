@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 networkSecurityDescription: "Sarearen eskaneatzea, irekitako portuen detekzioa eta ahultasunen ebaluazioa, Nmap, Wireshark eta Nessus bezalako tresnak erabiliz.",
                 securityAuditTitle: "Segurtasun Auditoria",
                 securityAuditDescription: "Sistema informatikoen segurtasunaren ebaluazio zehatza, ahultasunak identifikatuz eta irtenbide eraginkorrak proposatuz.",
-                securityAuditLink: "Ikusi Txostena"
+                securityAuditLink: "Ikusi Txostena",
                 viewReport: "Ikusi Txostena",
                 contactTitle: "Kontaktua",
                 contactDescription: "Hona hemen nire plataformak:",
