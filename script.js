@@ -40,10 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 securityAuditDescription: "Evaluación detallada de la seguridad en sistemas informáticos, identificando vulnerabilidades y proponiendo soluciones efectivas.",
                 securityAuditLink: "Descargar Informe", 
                 viewReport: "Descargar Informe",
-                playbook-title: "Playbooks de Ciberseguridad",
                 ransomware-playbook-title: "Playbook de Respuesta ante Ransomware",
                 ransomware-playbook-description: "Guía detallada con procedimientos paso a paso para actuar ante un incidente de ransomware, incluyendo identificación, contención, erradicación y recuperación segura.",
-                ransomware-playbook-link: "Descargar Playbook",
+                ransomware-playbook-link: "Descargar Informe",
                 contactTitle: "Contacto",
                 contactDescription: "Puedes encontrarme en las siguientes plataformas:",
                 linkedin: "LinkedIn",
@@ -64,10 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 securityAuditDescription: "Detailed evaluation of computer system security, identifying vulnerabilities and proposing effective solutions.",
                 securityAuditLink: "Download Report",
                 viewReport: "Download Report",
-                playbook-title: "Cybersecurity Playbooks",
                 ransomware-playbook-title: "Ransomware Incident Response Playbook",
                 ransomware-playbook-description: "Detailed step-by-step guide to respond to a ransomware incident, including identification, containment, eradication, and secure recovery.",
-                ransomware-playbook-link: "Download Playbook",    
+                ransomware-playbook-link: "Download Report",    
                 contactTitle: "Contact",
                 contactDescription: "You can find me on the following platforms:",
                 linkedin: "LinkedIn",
@@ -88,10 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 securityAuditDescription: "Sistema informatikoen segurtasunaren ebaluazio zehatza, ahultasunak identifikatuz eta irtenbide eraginkorrak proposatuz.",
                 securityAuditLink: "Txostena deskargatu",
                 viewReport: "Txostena deskargatu",
-                playbook-title: "Zibersegurtasuneko Playbook-ak",
                 ransomware-playbook-title: "Ransomware Erasoei Erantzuteko Playbook-a",
                 ransomware-playbook-description: "Ransomware erasoren baten aurrean jarduteko urratsez urratseko gida zehatza, identifikazioa, edukitzea, ezabatzea eta berreskuratze segurua barne.",
-                ransomware-playbook-link: "Deskargatu Playbook-a",
+                ransomware-playbook-link: "Txostena deskargatu",
                 contactTitle: "Kontaktua",
                 contactDescription: "Hona hemen nire plataformak:",
                 linkedin: "LinkedIn",
@@ -112,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("security-audit-title").textContent = texts[lang].securityAuditTitle;
         document.getElementById("security-audit-description").textContent = texts[lang].securityAuditDescription;
         document.getElementById("security-audit-link").textContent = texts[lang].securityAuditLink;
-        document.getElementById("playbook-title").textContent = texts[lang].playbookTitle;
         document.getElementById("ransomware-playbook-title").textContent = texts[lang].ransomwarePlaybookTitle;
         document.getElementById("ransomware-playbook-description").textContent = texts[lang].ransomwarePlaybookDescription;
         document.getElementById("ransomware-playbook-link").textContent = texts[lang].ransomwarePlaybookLink;
