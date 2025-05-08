@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 optionFuga: "Fuga de Datos",
                 optionDdos: "Denegación de Servicios (DDoS)",
                 downloadPlaybook: "Descargar",
+                dnsIncidentTitle: "Informe de Incidente DNS",
+                dnsIncidentDescription: "Análisis de tráfico de red ante caída del servicio DNS, incluyendo diagnóstico con tcpdump y recomendaciones.",
+                dnsIncidentLink: "Descargar Informe",
                 contactTitle: "Contacto",
                 contactDescription: "Puedes encontrarme en las siguientes plataformas:",
                 linkedin: "LinkedIn",
@@ -75,7 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 optionPhishing: "Phishing",
                 optionFuga: "Data Breach",
                 optionDdos: "Denial of Service (DDoS)",
-                downloadPlaybook: "Download", 
+                downloadPlaybook: "Download",
+                dnsIncidentTitle: "DNS Incident Report",
+                dnsIncidentDescription: "Network traffic analysis due to DNS service outage, including tcpdump diagnosis and recommendations.",
+                dnsIncidentLink: "Download Report",
                 contactTitle: "Contact",
                 contactDescription: "You can find me on the following platforms:",
                 linkedin: "LinkedIn",
@@ -104,6 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 optionFuga: "Datu-ihesa",
                 optionDdos: "Zerbitzu-ukapen erasoa (DDoS)",
                 downloadPlaybook: "Deskargatu",
+                dnsIncidentTitle: "DNS Gorabeheraren Txostena",
+                dnsIncidentDescription: "Sareko trafikoaren analisia DNS zerbitzuaren etenaren aurrean, tcpdump erabiliz eta gomendioekin.",
+                dnsIncidentLink: "Txostena deskargatu",
                 contactTitle: "Kontaktua",
                 contactDescription: "Hona hemen nire plataformak:",
                 linkedin: "LinkedIn",
@@ -133,6 +142,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("option-ddos").textContent = texts[lang].optionDdos;
         document.getElementById("download-playbook").textContent = texts[lang].downloadPlaybook;
         document.getElementById("view-report-link").textContent = texts[lang].viewReport;
+        document.getElementById("dns-incident-title").textContent = texts[lang].dnsIncidentTitle;
+        document.getElementById("dns-incident-description").textContent = texts[lang].dnsIncidentDescription;
+        document.getElementById("dns-incident-link").textContent = texts[lang].dnsIncidentLink;
         document.getElementById("contact-title").textContent = texts[lang].contactTitle;
         document.getElementById("contact-description").textContent = texts[lang].contactDescription;
         document.getElementById("footer-contact").innerHTML = texts[lang].footerContact + 
