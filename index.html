@@ -38,12 +38,20 @@
             <a href="reports/tina_calleja_auditoria_seguridad_MF0487-signed.pdf" target="_blank" id="security-audit-link">Descargar Informe</a>
        </article>
        
-    <article>
-        <h3 id="ransomwarePlaybookTitle">Playbook de Respuesta ante Ransomware</h3>
+       <article>
+        <h3 id="ransomwarePlaybookTitle">Playbook de Respuesta ante Incidentes</h3>
         <p id="ransomwarePlaybookDescription">
-        Guía detallada con procedimientos paso a paso para actuar ante un incidente de ransomware, incluyendo identificación, contención, erradicación y recuperación segura.
+            Selecciona un playbook de respuesta ante incidentes de seguridad para descargarlo.
         </p>
-        <a href="reports/Tina_Calleja_Playbook_Ransomware.pdf" target="_blank" id="ransomwarePlaybookLink">Descargar Informe</a>
+    
+        <label for="playbook-select" id="playbook-label">Elige un playbook:</label>
+        <select id="playbook-select">
+            <option value="reports/Tina_Calleja_Playbook_Ransomware.pdf" id="option-ransomware">Ransomware</option>
+            <option value="reports/Tina_Calleja_Playbook_Phishing.pdf" id="option-phishing">Phishing</option>
+            <option value="reports/Tina_Calleja_Playbook_FugaDatos.pdf" id="option-fuga">Fuga de Datos</option>
+            <option value="reports/Tina_Calleja_Playbook_DDoS.pdf" id="option-ddos">Denegación de Servicios (DDoS)</option>
+        </select>
+        <button id="download-playbook">Descargar</button>
     </article>
 
     <section id="contacto">
