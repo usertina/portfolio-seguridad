@@ -124,14 +124,14 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("security-audit-title").textContent = texts[lang].securityAuditTitle;
         document.getElementById("security-audit-description").textContent = texts[lang].securityAuditDescription;
         document.getElementById("security-audit-link").textContent = texts[lang].securityAuditLink;
-        document.getElementById("ransomwarePlaybookTitle").textContent = t.ransomwarePlaybookTitle;
-        document.getElementById("ransomwarePlaybookDescription").textContent = t.ransomwarePlaybookDescription;
-        document.getElementById("playbook-label").textContent = t.playbookLabel;
-        document.getElementById("option-ransomware").textContent = t.optionRansomware;
-        document.getElementById("option-phishing").textContent = t.optionPhishing;
-        document.getElementById("option-fuga").textContent = t.optionFuga;
-        document.getElementById("option-ddos").textContent = t.optionDdos;
-        document.getElementById("download-playbook").textContent = t.downloadPlaybook;
+        document.getElementById("ransomwarePlaybookTitle").textContent = texts[lang].ransomwarePlaybookTitle;
+        document.getElementById("ransomwarePlaybookDescription").textContent = texts[lang].ransomwarePlaybookDescription;
+        document.getElementById("playbook-label").textContent = texts[lang].playbookLabel;
+        document.getElementById("option-ransomware").textContent = texts[lang].optionRansomware;
+        document.getElementById("option-phishing").textContent = texts[lang].optionPhishing;
+        document.getElementById("option-fuga").textContent = texts[lang].optionFuga;
+        document.getElementById("option-ddos").textContent = texts[lang].optionDdos;
+        document.getElementById("download-playbook").textContent = texts[lang].downloadPlaybook;
         document.getElementById("view-report-link").textContent = texts[lang].viewReport;
         document.getElementById("contact-title").textContent = texts[lang].contactTitle;
         document.getElementById("contact-description").textContent = texts[lang].contactDescription;
@@ -159,4 +159,15 @@ document.addEventListener("DOMContentLoaded", function () {
     langEsButton.addEventListener("click", () => changeLanguage("es"));
     langEnButton.addEventListener("click", () => changeLanguage("en"));
     langEuButton.addEventListener("click", () => changeLanguage("eu"));
+
+// Descargar playbook
+    const downloadButton = document.getElementById("download-playbook");
+    const select = document.getElementById("playbook-select");
+
+    downloadButton.addEventListener("click", () => {
+        const selectedFile = select.value;
+        if (selectedFile) {
+            window.open(selectedFile, "_blank");
+        }
+    });
 });
