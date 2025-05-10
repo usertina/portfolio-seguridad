@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 dnsIncidentTitle: "Informe de Incidente DNS",
                 dnsIncidentDescription: "Análisis de tráfico de red ante caída del servicio DNS, incluyendo diagnóstico con tcpdump y recomendaciones.",
                 dnsIncidentLink: "Descargar Informe",
+                lanBudgetTitle: "Presupuesto de Red LAN",
+                lanBudgetDescription: "Diseño e instalación de una red LAN escalable para una empresa de tres plantas, con presupuesto detallado, equipamiento y mantenimiento.",
+                lanBudgetLink: "Descargar Informe",
                 contactTitle: "Contacto",
                 contactDescription: "Puedes encontrarme en las siguientes plataformas:",
                 linkedin: "LinkedIn",
@@ -82,6 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 dnsIncidentTitle: "DNS Incident Report",
                 dnsIncidentDescription: "Network traffic analysis due to DNS service outage, including tcpdump diagnosis and recommendations.",
                 dnsIncidentLink: "Download Report",
+                lanBudgetTitle: "LAN Network Budget",
+                lanBudgetDescription: "Design and installation of a scalable LAN network for a three-story company, including detailed budget, equipment, and maintenance.",
+                lanBudgetLink: "Download Report",
                 contactTitle: "Contact",
                 contactDescription: "You can find me on the following platforms:",
                 linkedin: "LinkedIn",
@@ -113,6 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 dnsIncidentTitle: "DNS Gorabeheraren Txostena",
                 dnsIncidentDescription: "Sareko trafikoaren analisia DNS zerbitzuaren etenaren aurrean, tcpdump erabiliz eta gomendioekin.",
                 dnsIncidentLink: "Txostena deskargatu",
+                lanBudgetTitle: "LAN Sarearen Aurrekontua",
+                lanBudgetDescription: "Hiru solairuko enpresa baterako LAN sare eskalagarriaren diseinua eta instalazioa, aurrekontu zehatza, ekipamendua eta mantentzea barne.",
+                lanBudgetLink: "Txostena deskargatu",
                 contactTitle: "Kontaktua",
                 contactDescription: "Hona hemen nire plataformak:",
                 linkedin: "LinkedIn",
@@ -145,6 +154,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("dns-incident-title").textContent = texts[lang].dnsIncidentTitle;
         document.getElementById("dns-incident-description").textContent = texts[lang].dnsIncidentDescription;
         document.getElementById("dns-incident-link").textContent = texts[lang].dnsIncidentLink;
+        document.getElementById("lan-budget-title").textContent = texts[lang].lanBudgetTitle;
+        document.getElementById("lan-budget-description").textContent = texts[lang].lanBudgetDescription;
+        document.getElementById("lan-budget-link").textContent = texts[lang].lanBudgetLink;
         document.getElementById("contact-title").textContent = texts[lang].contactTitle;
         document.getElementById("contact-description").textContent = texts[lang].contactDescription;
         document.getElementById("footer-contact").innerHTML = texts[lang].footerContact + 
