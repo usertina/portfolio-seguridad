@@ -1,197 +1,256 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let themeToggleButton = document.getElementById("theme-toggle");
-    let themeStyle = document.getElementById("theme-style");
+    // ========== CONFIGURACIÓN INICIAL ========== //
+    const themeToggleButton = document.getElementById("theme-toggle");
+    const themeStyle = document.getElementById("theme-style");
+    let currentLanguage = localStorage.getItem("language") || "es";
 
-    // Verificar si hay un tema guardado en localStorage
-    let savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-        themeStyle.setAttribute("href", savedTheme);
-        themeToggleButton.textContent = savedTheme === "dark.css" ? "☀️" : "🌙";
-    }
+    // ========== GESTIÓN DEL TEMA ========== //
+    const savedTheme = localStorage.getItem("theme") || "light.css";
+    themeStyle.setAttribute("href", savedTheme);
+    document.body.classList.add(savedTheme === "dark.css" ? "dark-theme" : "light-theme");
+    themeToggleButton.textContent = savedTheme === "dark.css" ? "☀️" : "🌙";
 
     themeToggleButton.addEventListener("click", function () {
-        if (themeStyle.getAttribute("href") === "light.css") {
-            themeStyle.setAttribute("href", "dark.css");
-            localStorage.setItem("theme", "dark.css");
-            themeToggleButton.textContent = "☀️";
-        } else {
-            themeStyle.setAttribute("href", "light.css");
-            localStorage.setItem("theme", "light.css");
-            themeToggleButton.textContent = "🌙";
-        }
+        const isDark = themeStyle.getAttribute("href").includes("dark.css");
+        themeStyle.setAttribute("href", isDark ? "light.css" : "dark.css");
+        localStorage.setItem("theme", isDark ? "light.css" : "dark.css");
+        document.body.classList.replace(isDark ? "dark-theme" : "light-theme", isDark ? "light-theme" : "dark-theme");
+        themeToggleButton.textContent = isDark ? "🌙" : "☀️";
     });
 
-    // Cambio de idioma
-    const langEsButton = document.getElementById("lang-es");
-    const langEnButton = document.getElementById("lang-en");
-    const langEuButton = document.getElementById("lang-eu");
+    // ========== GESTIÓN DE IDIOMAS ========== //
+    const langButtons = {
+        es: document.getElementById("lang-es"),
+        en: document.getElementById("lang-en"),
+        eu: document.getElementById("lang-eu")
+    };
+
+    function updateActiveLanguageButton() {
+        Object.values(langButtons).forEach(btn => btn.classList.remove("active"));
+        langButtons[currentLanguage].classList.add("active");
+    }
+
+    // ========== TEXTO TRADUCIBLE ========== //
+    const translations = {
+        es: {
+            // Encabezado
+            'portfolio-title': "Mi Portfolio de Seguridad Informática",
+            'portfolio-description': "Proyectos, análisis de vulnerabilidades y auditorías",
+
+            // Sobre mí
+            'about-title': "Sobre mí",
+            'about-description': "Desarrolladora web con especialización en seguridad informática. Me apasiona la ciberseguridad y el análisis de vulnerabilidades.",
+
+            // Proyectos
+            'projects-title': "Proyectos",
+            'network-security-analysis-title': "Análisis de Seguridad en Red",
+            'network-security-description': "Escaneo de red, detección de puertos abiertos y evaluación de vulnerabilidades utilizando herramientas como Nmap, Wireshark y Nessus.",
+            'security-audit-title': "Auditoría de Seguridad",
+            'security-audit-description': "Evaluación detallada de la seguridad en sistemas informáticos, identificando vulnerabilidades y proponiendo soluciones efectivas.",
+            'view-report-link': "Descargar Informe",
+            'security-audit-link': "Descargar Informe",
+            'ransomwarePlaybookTitle': "Playbook de Respuesta ante Incidentes",
+            'ransomwarePlaybookDescription': "Selecciona un playbook de respuesta ante incidentes de seguridad para descargarlo.",
+            'playbook-label': "Elige un playbook:",
+            'option-ransomware': "Ransomware",
+            'option-phishing': "Phishing",
+            'option-fuga': "Fuga de Datos",
+            'option-ddos': "Denegación de Servicios (DDoS)",
+            'download-playbook': "Descargar",
+            'dns-incident-title': "Informe de Incidente DNS",
+            'dns-incident-description': "Análisis de tráfico de red ante caída del servicio DNS, incluyendo diagnóstico con tcpdump y recomendaciones.",
+            'dns-incident-link': "Descargar Informe",
+            'lan-budget-title': "Presupuesto de Red LAN",
+            'lan-budget-description': "Diseño e instalación de una red LAN escalable para una empresa de tres plantas, con presupuesto detallado, equipamiento y mantenimiento.",
+            'lan-budget-link': "Descargar Informe",
+
+            // Contacto
+            'contact-title': "Contacto",
+            'contact-description': "Puedes encontrarme en las siguientes plataformas:",
+            'linkedin-link': "LinkedIn",
+            'cv-link': "Currículum Vitae",
+            'github-link': "GitHub",
+            'gmail-link': "Gmail",
+
+            // Footer
+            'portfolio-text': "Portfolio de Seguridad Informática",
+            'footer-text': "Contacto",
+            'privacy-link': "Política de Privacidad",
+            'terms-link': "Términos de Uso",
+            'footer-email': "agustinacalleja@gmail.com"
+        },
+        en: {
+            // Header
+            'portfolio-title': "My Cybersecurity Portfolio",
+            'portfolio-description': "Projects, vulnerability analysis, and audits",
+
+            // About
+            'about-title': "About Me",
+            'about-description': "Web developer with a specialization in cybersecurity. I am passionate about cybersecurity and vulnerability analysis.",
+
+            // Projects
+            'projects-title': "Projects",
+            'network-security-analysis-title': "Network Security Analysis",
+            'network-security-description': "Network scanning, open port detection, and vulnerability assessment using tools like Nmap, Wireshark, and Nessus.",
+            'security-audit-title': "Security Audit",
+            'security-audit-description': "Detailed evaluation of computer system security, identifying vulnerabilities and proposing effective solutions.",
+            'view-report-link': "Download Report",
+            'security-audit-link': "Download Report",
+            'ransomwarePlaybookTitle': "Incident Response Playbook",
+            'ransomwarePlaybookDescription': "Select a security incident response playbook to download.",
+            'playbook-label': "Choose a playbook:",
+            'option-ransomware': "Ransomware",
+            'option-phishing': "Phishing",
+            'option-fuga': "Data Breach",
+            'option-ddos': "Denial of Service (DDoS)",
+            'download-playbook': "Download",
+            'dns-incident-title': "DNS Incident Report",
+            'dns-incident-description': "Network traffic analysis due to DNS service outage, including tcpdump diagnosis and recommendations.",
+            'dns-incident-link': "Download Report",
+            'lan-budget-title': "LAN Network Budget",
+            'lan-budget-description': "Design and installation of a scalable LAN network for a three-story company, including detailed budget, equipment, and maintenance.",
+            'lan-budget-link': "Download Report",
+
+            // Contact
+            'contact-title': "Contact",
+            'contact-description': "You can find me on the following platforms:",
+            'linkedin-link': "LinkedIn",
+            'cv-link': "Curriculum Vitae",
+            'github-link': "GitHub",
+            'gmail-link': "Gmail",
+
+            // Footer
+            'portfolio-text': "Cybersecurity Portfolio",
+            'footer-text': "Contact",
+            'privacy-link': "Privacy Policy",
+            'terms-link': "Terms of Service",
+            'footer-email': "agustinacalleja@gmail.com"
+        },
+        eu: {
+            // Goiburua
+            'portfolio-title': "Nire Zibersegurtasun Portfolioa",
+            'portfolio-description': "Proiektuak, ahultasun-analisiak eta auditoretzak",
+
+            // Niri buruz
+            'about-title': "Niri buruz",
+            'about-description': "Web garatzailea, zibersegurtasunean espezializatua. Zibersegurtasuna eta ahultasunen analisia dira nire pasioak.",
+
+            // Proiektuak
+            'projects-title': "Proiektuak",
+            'network-security-analysis-title': "Sareko Segurtasun Analisia",
+            'network-security-description': "Sarearen eskaneatzea, irekitako portuen detekzioa eta ahultasunen ebaluazioa, Nmap, Wireshark eta Nessus bezalako tresnak erabiliz.",
+            'security-audit-title': "Segurtasun Auditoria",
+            'security-audit-description': "Sistema informatikoen segurtasunaren ebaluazio zehatza, ahultasunak identifikatuz eta irtenbide eraginkorrak proposatuz.",
+            'view-report-link': "Txostena deskargatu",
+            'security-audit-link': "Txostena deskargatu",
+            'ransomwarePlaybookTitle': "Gertaeren Erantzun Playbook-a",
+            'ransomwarePlaybookDescription': "Hautatu segurtasun-erasoen aurkako erantzun-playbook bat deskargatzeko.",
+            'playbook-label': "Hautatu playbook bat:",
+            'option-ransomware': "Ransomware",
+            'option-phishing': "Phishing-a",
+            'option-fuga': "Datu-ihesa",
+            'option-ddos': "Zerbitzu-ukapen erasoa (DDoS)",
+            'download-playbook': "Deskargatu",
+            'dns-incident-title': "DNS Gorabeheraren Txostena",
+            'dns-incident-description': "Sareko trafikoaren analisia DNS zerbitzuaren etenaren aurrean, tcpdump erabiliz eta gomendioekin.",
+            'dns-incident-link': "Txostena deskargatu",
+            'lan-budget-title': "LAN Sarearen Aurrekontua",
+            'lan-budget-description': "Hiru solairuko enpresa baterako LAN sare eskalagarriaren diseinua eta instalazioa, aurrekontu zehatza, ekipamendua eta mantentzea barne.",
+            'lan-budget-link': "Txostena deskargatu",
+
+            // Kontaktua
+            'contact-title': "Kontaktua",
+            'contact-description': "Hona hemen nire plataformak:",
+            'linkedin-link': "LinkedIn",
+            'cv-link': "Curriculum Vitae",
+            'github-link': "GitHub",
+            'gmail-link': "Gmail",
+
+            // Footer
+            'portfolio-text': "Zibersegurtasun Portfolioa",
+            'footer-text': "Kontaktua",
+            'privacy-link': "Pribatutasun Politika",
+            'terms-link': "Erabilpen Baldintzak",
+            'footer-email': "agustinacalleja@gmail.com"
+        }
+    };
+
+    // ========== FUNCIONES DE FECHA/HORA ========== //
+    function updateDateTime() {
+        const now = new Date();
+        const lang = currentLanguage === 'eu' ? 'es' : currentLanguage;
+
+        document.getElementById("current-date").textContent = now.toLocaleDateString(lang, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        document.getElementById("current-time").textContent = now.toLocaleTimeString(lang, {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+
+        document.getElementById("current-year").textContent = now.getFullYear();
+    }
 
     function changeLanguage(lang) {
-        const texts = {
-            es: {
-                portfolioTitle: "Mi Portfolio de Seguridad Informática",
-                portfolioDescription: "Proyectos, análisis de vulnerabilidades y auditorías",
-                aboutTitle: "Sobre mí",
-                aboutDescription: "Desarrolladora web con especialización en seguridad informática. Me apasiona la ciberseguridad y el análisis de vulnerabilidades.",
-                projectsTitle: "Proyectos",
-                networkSecurityTitle: "Análisis de Seguridad en Red",
-                networkSecurityDescription: "Escaneo de red, detección de puertos abiertos y evaluación de vulnerabilidades utilizando herramientas como Nmap, Wireshark y Nessus.",
-                securityAuditTitle: "Auditoría de Seguridad",
-                securityAuditDescription: "Evaluación detallada de la seguridad en sistemas informáticos, identificando vulnerabilidades y proponiendo soluciones efectivas.",
-                securityAuditLink: "Descargar Informe", 
-                viewReport: "Descargar Informe",
-                ransomwarePlaybookTitle: "Playbook de Respuesta ante Incidentes",
-                ransomwarePlaybookDescription: "Selecciona un playbook de respuesta ante incidentes de seguridad para descargarlo.",
-                playbookLabel: "Elige un playbook:",
-                optionRansomware: "Ransomware",
-                optionPhishing: "Phishing",
-                optionFuga: "Fuga de Datos",
-                optionDdos: "Denegación de Servicios (DDoS)",
-                downloadPlaybook: "Descargar",
-                dnsIncidentTitle: "Informe de Incidente DNS",
-                dnsIncidentDescription: "Análisis de tráfico de red ante caída del servicio DNS, incluyendo diagnóstico con tcpdump y recomendaciones.",
-                dnsIncidentLink: "Descargar Informe",
-                lanBudgetTitle: "Presupuesto de Red LAN",
-                lanBudgetDescription: "Diseño e instalación de una red LAN escalable para una empresa de tres plantas, con presupuesto detallado, equipamiento y mantenimiento.",
-                lanBudgetLink: "Descargar Informe",
-                contactTitle: "Contacto",
-                contactDescription: "Puedes encontrarme en las siguientes plataformas:",
-                linkedin: "LinkedIn",
-                cv: "Currículum Vitae",
-                github: "GitHub",
-                gmail: "Gmail",
-                footerContact: "Contacto: "
-            },
-            en: {
-                portfolioTitle: "My Cybersecurity Portfolio",
-                portfolioDescription: "Projects, vulnerability analysis, and audits",
-                aboutTitle: "About Me",
-                aboutDescription: "Web developer with a specialization in cybersecurity. I am passionate about cybersecurity and vulnerability analysis.",
-                projectsTitle: "Projects",
-                networkSecurityTitle: "Network Security Analysis",
-                networkSecurityDescription: "Network scanning, open port detection, and vulnerability assessment using tools like Nmap, Wireshark, and Nessus.",
-                securityAuditTitle: "Security Audit",
-                securityAuditDescription: "Detailed evaluation of computer system security, identifying vulnerabilities and proposing effective solutions.",
-                securityAuditLink: "Download Report",
-                viewReport: "Download Report",
-                ransomwarePlaybookTitle: "Incident Response Playbook",
-                ransomwarePlaybookDescription: "Select a security incident response playbook to download.",
-                playbookLabel: "Choose a playbook:",
-                optionRansomware: "Ransomware",
-                optionPhishing: "Phishing",
-                optionFuga: "Data Breach",
-                optionDdos: "Denial of Service (DDoS)",
-                downloadPlaybook: "Download",
-                dnsIncidentTitle: "DNS Incident Report",
-                dnsIncidentDescription: "Network traffic analysis due to DNS service outage, including tcpdump diagnosis and recommendations.",
-                dnsIncidentLink: "Download Report",
-                lanBudgetTitle: "LAN Network Budget",
-                lanBudgetDescription: "Design and installation of a scalable LAN network for a three-story company, including detailed budget, equipment, and maintenance.",
-                lanBudgetLink: "Download Report",
-                contactTitle: "Contact",
-                contactDescription: "You can find me on the following platforms:",
-                linkedin: "LinkedIn",
-                cv: "Currículum Vitae",
-                github: "GitHub",
-                gmail: "Gmail",
-                footerContact: "Contact: "
-            },
-            eu: {
-                portfolioTitle: "Nire Zibersegurtasun Portfolioa",
-                portfolioDescription: "Proiektuak, ahultasun-analisiak eta auditoretzak",
-                aboutTitle: "Niri buruz",
-                aboutDescription: "Web garatzailea, zibersegurtasunean espezializatua. Zibersegurtasuna eta ahultasunen analisia dira nire pasioak.",
-                projectsTitle: "Proiektuak",
-                networkSecurityTitle: "Sareko Segurtasun Analisia",
-                networkSecurityDescription: "Sarearen eskaneatzea, irekitako portuen detekzioa eta ahultasunen ebaluazioa, Nmap, Wireshark eta Nessus bezalako tresnak erabiliz.",
-                securityAuditTitle: "Segurtasun Auditoria",
-                securityAuditDescription: "Sistema informatikoen segurtasunaren ebaluazio zehatza, ahultasunak identifikatuz eta irtenbide eraginkorrak proposatuz.",
-                securityAuditLink: "Txostena deskargatu",
-                viewReport: "Txostena deskargatu",
-                ransomwarePlaybookTitle: "Gertaeren Erantzun Playbook-a",
-                ransomwarePlaybookDescription: "Hautatu segurtasun-erasoen aurkako erantzun-playbook bat deskargatzeko.",
-                playbookLabel: "Hautatu playbook bat:",
-                optionRansomware: "Ransomware",
-                optionPhishing: "Phishing-a",
-                optionFuga: "Datu-ihesa",
-                optionDdos: "Zerbitzu-ukapen erasoa (DDoS)",
-                downloadPlaybook: "Deskargatu",
-                dnsIncidentTitle: "DNS Gorabeheraren Txostena",
-                dnsIncidentDescription: "Sareko trafikoaren analisia DNS zerbitzuaren etenaren aurrean, tcpdump erabiliz eta gomendioekin.",
-                dnsIncidentLink: "Txostena deskargatu",
-                lanBudgetTitle: "LAN Sarearen Aurrekontua",
-                lanBudgetDescription: "Hiru solairuko enpresa baterako LAN sare eskalagarriaren diseinua eta instalazioa, aurrekontu zehatza, ekipamendua eta mantentzea barne.",
-                lanBudgetLink: "Txostena deskargatu",
-                contactTitle: "Kontaktua",
-                contactDescription: "Hona hemen nire plataformak:",
-                linkedin: "LinkedIn",
-                cv: "Currículum Vitae",
-                github: "GitHub",
-                gmail: "Gmail",
-                footerContact: "Kontaktua: "
+        currentLanguage = lang;
+        localStorage.setItem("language", lang);
+        updateActiveLanguageButton();
+
+        // Aplicar traducciones
+        Object.entries(translations[lang]).forEach(([key, value]) => {
+            const element = document.getElementById(key);
+            if (element) {
+                if (key.includes('-link') && element.querySelector("i")) {
+                    const icon = element.querySelector("i");
+                    element.innerHTML = `${icon.outerHTML} ${value}`;
+                } else {
+                    element.textContent = value;
+                }
             }
-        };
+        });
 
-        document.getElementById("portfolio-title").textContent = texts[lang].portfolioTitle;
-        document.getElementById("portfolio-description").textContent = texts[lang].portfolioDescription;
-        document.getElementById("about-title").textContent = texts[lang].aboutTitle;
-        document.getElementById("about-description").textContent = texts[lang].aboutDescription;
-        document.getElementById("projects-title").textContent = texts[lang].projectsTitle;
-        document.getElementById("network-security-analysis-title").textContent = texts[lang].networkSecurityTitle;
-        document.getElementById("network-security-description").textContent = texts[lang].networkSecurityDescription;
-        document.getElementById("security-audit-title").textContent = texts[lang].securityAuditTitle;
-        document.getElementById("security-audit-description").textContent = texts[lang].securityAuditDescription;
-        document.getElementById("security-audit-link").textContent = texts[lang].securityAuditLink;
-        document.getElementById("ransomwarePlaybookTitle").textContent = texts[lang].ransomwarePlaybookTitle;
-        document.getElementById("ransomwarePlaybookDescription").textContent = texts[lang].ransomwarePlaybookDescription;
-        document.getElementById("playbook-label").textContent = texts[lang].playbookLabel;
-        document.getElementById("option-ransomware").textContent = texts[lang].optionRansomware;
-        document.getElementById("option-phishing").textContent = texts[lang].optionPhishing;
-        document.getElementById("option-fuga").textContent = texts[lang].optionFuga;
-        document.getElementById("option-ddos").textContent = texts[lang].optionDdos;
-        document.getElementById("download-playbook").textContent = texts[lang].downloadPlaybook;
-        document.getElementById("view-report-link").textContent = texts[lang].viewReport;
-        document.getElementById("dns-incident-title").textContent = texts[lang].dnsIncidentTitle;
-        document.getElementById("dns-incident-description").textContent = texts[lang].dnsIncidentDescription;
-        document.getElementById("dns-incident-link").textContent = texts[lang].dnsIncidentLink;
-        document.getElementById("lan-budget-title").textContent = texts[lang].lanBudgetTitle;
-        document.getElementById("lan-budget-description").textContent = texts[lang].lanBudgetDescription;
-        document.getElementById("lan-budget-link").textContent = texts[lang].lanBudgetLink;
-        document.getElementById("contact-title").textContent = texts[lang].contactTitle;
-        document.getElementById("contact-description").textContent = texts[lang].contactDescription;
-        document.getElementById("footer-contact").innerHTML = texts[lang].footerContact + 
-            '<a href="mailto:agustinacalleja@gmail.com">agustinacalleja@gmail.com</a> |';
-
-        // Actualizar solo el texto de los enlaces sin eliminar los iconos
-        updateLinkText("linkedin-link", texts[lang].linkedin);
-        updateLinkText("cv-link", texts[lang].cv);
-        updateLinkText("github-link", texts[lang].github);
-        updateLinkText("gmail-link", texts[lang].gmail);
+        updateDateTime();
     }
 
-    function updateLinkText(elementId, text) {
-        const link = document.getElementById(elementId);
-        if (link) {
-            const textNode = link.childNodes[1]; // Segundo nodo suele ser el texto después del icono
-            if (textNode && textNode.nodeType === Node.TEXT_NODE) {
-                textNode.textContent = " " + text; // Mantiene el espacio entre el icono y el texto
-            }
-        }
-    }
-
-    // Asignar eventos a los botones de cambio de idioma
-    langEsButton.addEventListener("click", () => changeLanguage("es"));
-    langEnButton.addEventListener("click", () => changeLanguage("en"));
-    langEuButton.addEventListener("click", () => changeLanguage("eu"));
-
-// Descargar playbook
-    const downloadButton = document.getElementById("download-playbook");
-    const select = document.getElementById("playbook-select");
-
-    downloadButton.addEventListener("click", () => {
-        const selectedFile = select.value;
+    // ========== PLAYBOOK DOWNLOAD ========== //
+    document.getElementById("download-playbook").addEventListener("click", function() {
+        const selectedFile = document.getElementById("playbook-select").value;
         if (selectedFile) {
-            window.open(selectedFile, "_blank");
+            const downloadBtn = this;
+            const states = {
+                es: ["Descargando...", "Descargado", "Descargar"],
+                en: ["Downloading...", "Downloaded", "Download"],
+                eu: ["Deskargatzen...", "Deskargatuta", "Deskargatu"]
+            };
+
+            downloadBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${states[currentLanguage][0]}`;
+
+            setTimeout(() => {
+                window.open(selectedFile, "_blank");
+                downloadBtn.innerHTML = `<i class="fas fa-check"></i> ${states[currentLanguage][1]}`;
+
+                setTimeout(() => {
+                    downloadBtn.innerHTML = `<i class="fas fa-file-download"></i> ${states[currentLanguage][2]}`;
+                }, 2000);
+            }, 500);
         }
     });
+
+    // ========== INICIALIZACIÓN ========== //
+    Object.entries(langButtons).forEach(([lang, btn]) => {
+        btn.addEventListener("click", () => changeLanguage(lang));
+    });
+
+    // Iniciar
+    changeLanguage(currentLanguage);
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+
+    setTimeout(() => {
+        document.body.style.opacity = "1";
+    }, 100);
 });
