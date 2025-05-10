@@ -6,98 +6,138 @@
     <title>Portfolio de Seguridad Informática</title>
     <link rel="stylesheet" href="light.css" id="theme-style">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="language-switch">
-            <span id="lang-es" class="lang-option">ES</span> | 
-            <span id="lang-en" class="lang-option">EN</span> | 
-            <span id="lang-eu" class="lang-option">EU</span>
+        <div class="header-content">
+            <div class="language-switch">
+                <span id="lang-es" class="lang-option active">ES</span> | 
+                <span id="lang-en" class="lang-option">EN</span> | 
+                <span id="lang-eu" class="lang-option">EU</span>
+            </div>
+            <button id="theme-toggle" class="btn-theme">🌙</button>
+            <h1 id="portfolio-title">Mi Portfolio de Seguridad Informática</h1>
+            <p id="portfolio-description">Proyectos, análisis de vulnerabilidades y auditorías</p>
         </div>
-        <button id="theme-toggle">🌙</button>
-        <h1 id="portfolio-title">Mi Portfolio de Seguridad Informática</h1>
-        <p id="portfolio-description">Proyectos, análisis de vulnerabilidades y auditorías</p>
     </header>
 
-    <section id="sobre-mi">
-        <h2 id="about-title">Sobre mí</h2>
-        <p id="about-description">Desarrolladora web con especialización en seguridad informática. Me apasiona la ciberseguridad y el análisis de vulnerabilidades.</p>
-    </section>
+    <main class="container">
+        <section id="sobre-mi">
+            <h2 id="about-title"><i class="fas fa-user"></i> Sobre mí</h2>
+            <p id="about-description">Desarrolladora web con especialización en seguridad informática. Me apasiona la ciberseguridad y el análisis de vulnerabilidades.</p>
+        </section>
 
-    <section id="proyectos">
-        <h2 id="projects-title">Proyectos</h2>
-        <article>
-            <h3 id="network-security-analysis-title">Análisis de Seguridad en Red</h3>
-            <p id="network-security-description">Escaneo de red, detección de puertos abiertos y evaluación de vulnerabilidades utilizando herramientas como Nmap, Wireshark y Nessus.</p>
-            <a href="reports/E1_Tina_Calleja_Informe_seguridad_informatica.pdf" target="_blank" id="view-report-link">Descargar Informe</a>
-        </article>
-        <article>
-            <h3 id="security-audit-title">Auditoría de Seguridad</h3>
-            <p id="security-audit-description">Evaluación detallada de la seguridad en sistemas informáticos, identificando vulnerabilidades y proponiendo soluciones efectivas.</p>
-            <a href="reports/tina_calleja_auditoria_seguridad_MF0487-signed.pdf" target="_blank" id="security-audit-link">Descargar Informe</a>
-       </article>
-       
-       <article>
-        <h3 id="ransomwarePlaybookTitle">Playbook de Respuesta ante Incidentes</h3>
-        <p id="ransomwarePlaybookDescription">
-            Selecciona un playbook de respuesta ante incidentes de seguridad para descargarlo.
+        <section id="proyectos">
+            <h2 id="projects-title"><i class="fas fa-project-diagram"></i> Proyectos</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3 id="network-security-analysis-title">Análisis de Seguridad en Red</h3>
+                        <p id="network-security-description">Escaneo de red, detección de puertos abiertos y evaluación de vulnerabilidades utilizando herramientas como Nmap, Wireshark y Nessus.</p>
+                        <a href="reports/E1_Tina_Calleja_Informe_seguridad_informatica.pdf" target="_blank" class="btn-download" id="view-report-link">
+                            <i class="fas fa-download"></i> Descargar Informe
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3 id="security-audit-title">Auditoría de Seguridad</h3>
+                        <p id="security-audit-description">Evaluación detallada de la seguridad en sistemas informáticos, identificando vulnerabilidades y proponiendo soluciones efectivas.</p>
+                        <a href="reports/tina_calleja_auditoria_seguridad_MF0487-signed.pdf" target="_blank" class="btn-download" id="security-audit-link">
+                            <i class="fas fa-download"></i> Descargar Informe
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3 id="ransomwarePlaybookTitle">Playbook de Respuesta ante Incidentes</h3>
+                        <p id="ransomwarePlaybookDescription">
+                            Selecciona un playbook de respuesta ante incidentes de seguridad para descargarlo.
+                        </p>
+                        <div class="playbook-selector">
+                            <select id="playbook-select" class="form-select">
+                                <option value="reports/Tina_Calleja_Playbook_Ransomware.pdf" id="option-ransomware">Ransomware</option>
+                                <option value="reports/Tina_Calleja_Playbook_Phishing.pdf" id="option-phishing">Phishing</option>
+                                <option value="reports/Tina_Calleja_Playbook_FugaDatos.pdf" id="option-fuga">Fuga de Datos</option>
+                                <option value="reports/Tina_Calleja_Playbook_DDoS.pdf" id="option-ddos">Denegación de Servicios (DDoS)</option>
+                            </select>
+                            <button id="download-playbook" class="btn-primary">
+                                <i class="fas fa-file-download"></i> Descargar
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3 id="dns-incident-title">Informe de Incidente DNS</h3>
+                        <p id="dns-incident-description">
+                            Análisis de tráfico de red ante caída del servicio DNS, incluyendo diagnóstico con tcpdump y recomendaciones.
+                        </p>
+                        <a href="reports/Informe_incidente_ciberseguridad.pdf" target="_blank" class="btn-download" id="dns-incident-link">
+                            <i class="fas fa-download"></i> Descargar Informe
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3 id="lan-budget-title">Presupuesto de Red LAN</h3>
+                        <p id="lan-budget-description">
+                            Diseño e instalación de una red LAN escalable para una empresa de tres plantas, con presupuesto detallado, equipamiento y mantenimiento.
+                        </p>
+                        <a href="reports/tina_calleja_presupuesto_red_LAN.pdf" target="_blank" class="btn-download" id="lan-budget-link">
+                            <i class="fas fa-download"></i> Descargar Informe
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2 id="contact-title"><i class="fas fa-envelope"></i> Contacto</h2>
+            <p id="contact-description">Puedes encontrarme en las siguientes plataformas:</p>
+            <ul>
+                <li>
+                    <a href="https://www.linkedin.com/in/tina-calleja" target="_blank" id="linkedin-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tina-calleja.my.canva.site" target="_blank" id="cv-link">
+                        <i class="fas fa-file-alt"></i> Currículum Vitae
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/usertina" target="_blank" id="github-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:agustinacalleja@gmail.com" target="_blank" id="gmail-link">
+                        <i class="fas fa-envelope"></i> Gmail
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+<footer>
+    <div class="footer-content">
+        <p id="copyright-text">
+            &copy; <span id="current-year"></span> Tina Calleja - <span id="portfolio-text">Portfolio de Seguridad Informática</span>
         </p>
-    
-        <label for="playbook-select" id="playbook-label">Elige un playbook:</label>
-        <select id="playbook-select">
-            <option value="reports/Tina_Calleja_Playbook_Ransomware.pdf" id="option-ransomware">Ransomware</option>
-            <option value="reports/Tina_Calleja_Playbook_Phishing.pdf" id="option-phishing">Phishing</option>
-            <option value="reports/Tina_Calleja_Playbook_FugaDatos.pdf" id="option-fuga">Fuga de Datos</option>
-            <option value="reports/Tina_Calleja_Playbook_DDoS.pdf" id="option-ddos">Denegación de Servicios (DDoS)</option>
-        </select>
-        <button id="download-playbook">Descargar</button>
-    </article>
-    <article>
-     <h3 id="dns-incident-title">Informe de Incidente DNS</h3>
-     <p id="dns-incident-description">
-        Análisis de tráfico de red ante caída del servicio DNS, incluyendo diagnóstico con tcpdump y recomendaciones.
-     </p>
-     <a href="reports/Informe_incidente_ciberseguridad.pdf" target="_blank" id="dns-incident-link">Descargar Informe</a>
-    </article>
-    <article>
-     <h3 id="lan-budget-title">Presupuesto de Red LAN</h3>
-     <p id="lan-budget-description">
-        Diseño e instalación de una red LAN escalable para una empresa de tres plantas, con presupuesto detallado, equipamiento y mantenimiento.
-     </p>
-     <a href="reports/tina_calleja_presupuesto_red_LAN.pdf" target="_blank" id="lan-budget-link">Descargar Informe</a>
-    </article>
-    <section id="contacto">
-        <h2 id="contact-title">Contacto</h2>
-        <p id="contact-description">Puedes encontrarme en las siguientes plataformas:</p>
-        <ul>
-            <li>
-                <a href="https://www.linkedin.com/in/tina-calleja" target="_blank" id="linkedin-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </li>
-            <li>
-                <a href="https://tina-calleja.my.canva.site" target="_blank" id="cv-link">
-                    <i class="fas fa-file-alt"></i> Currículum Vitae
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/usertina" target="_blank" id="github-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </li>
-            <li>
-                <a href="mailto:agustinacalleja@gmail.com" target="_blank" id="gmail-link">
-                    <i class="fas fa-envelope"></i> Gmail
-                </a>
-            </li>
-        </ul>
-    </section>
-    
-    <footer>
-        <p id="footer-contact">Contacto: 
-            <a href="mailto:agustinacalleja@gmail.com">agustinacalleja@gmail.com</a> | 
+        <div id="datetime">
+            <span id="current-date"></span> | 
+            <span id="current-time"></span>
+        </div>
+        <p id="legal-links">
+            <a href="mailto:agustinacalleja@gmail.com" id="footer-email">Contacto</a>
         </p>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>
