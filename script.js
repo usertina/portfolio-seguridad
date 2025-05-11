@@ -177,23 +177,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ========== FUNCIONES DE FECHA/HORA ========== //
     function updateDateTime() {
-        const now = new Date();
-        const lang = currentLanguage === 'eu' ? 'es' : currentLanguage;
+    const now = new Date();
+    const lang = currentLanguage; // Usamos directamente el idioma seleccionado
 
-        document.getElementById("current-date").textContent = now.toLocaleDateString(lang, {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: lang === 'en' ? 'UTC' : 'Europe/Madrid'
+    };
 
-        document.getElementById("current-time").textContent = now.toLocaleTimeString(lang, {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        });
+    try {
+        // Formato completo para fecha y hora
+        const dateTimeStr = now.toLocaleString(lang, options);
+        
+        // Si tienes elementos separados para fecha y hora:
+        const [weekday, date, time] = dateTimeStr.split(', ');
+        document.getElementById("current-date").textContent = `${weekday}, ${date}`;
+        document.getElementById("current-time").textContent = time;
+        document.getElementById("current-year").textContent = now.getFullYear();
 
+    } catch (e) {
+        console.error("Error formateando fecha:", e);
+        // Fallback en español si hay error
+        const fallbackFormat = now.toLocaleString('es', options);
+        const [weekday, date, time] = fallbackFormat.split(', ');
+        document.getElementById("current-date").textContent = `${weekday}, ${date}`;
+        document.getElementById("current-time").textContent = time;
         document.getElementById("current-year").textContent = now.getFullYear();
     }
+}
 
     function changeLanguage(lang) {
         currentLanguage = lang;
