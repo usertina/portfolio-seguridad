@@ -1,215 +1,94 @@
 :root {
-        --primary-color: #1e3c72;
-            --secondary-color: #2a5298;
-                --text-color: #333;
-                    --background-light: #ccd9e0;
-                        --background-dark: #a3b8c9;
-                            --card-bg: rgba(255, 255, 255, 0.9);
-                                --button-bg: #2a5298;
-                                    --button-text: white;
-                                        --link-color: #1e6091;
-                                            --hover-bg: rgba(30, 96, 145, 0.1);
-                                            }
-
-                                            body {
-                                                font-family: 'Open Sans', sans-serif;
-                                                    margin: 0;
-                                                        padding: 0;
-                                                            background: linear-gradient(135deg, var(--background-light), var(--background-dark));
-                                                                color: var(--text-color);
-                                                                    line-height: 1.6;
-                                                                        opacity: 0;
-                                                                            transition: opacity 0.5s ease, background 0.5s ease;
-                                                                            }
-
-                                                                            body.light-theme {
-                                                                                background: linear-gradient(135deg, var(--background-light), var(--background-dark));
-                                                                                }
-
-                                                                                .container {
-                                                                                    max-width: 1000px;
-                                                                                        margin: 30px auto;
-                                                                                            padding: 30px;
-                                                                                                background: var(--card-bg);
-                                                                                                    border-radius: 12px;
-                                                                                                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                                                                                                        }
-
-                                                                                                        header {
-                                                                                                            text-align: center;
-                                                                                                                padding: 30px 0;
-                                                                                                                    margin-bottom: 40px;
-                                                                                                                        position: relative;
-                                                                                                                        }
-
-                                                                                                                        h1, h2, h3 {
-                                                                                                                            color: var(--primary-color);
-                                                                                                                            }
-
-                                                                                                                            h1 {
-                                                                                                                                font-size: 2.8em;
-                                                                                                                                    margin-bottom: 10px;
-                                                                                                                                        font-weight: 700;
-                                                                                                                                        }
-
-                                                                                                                                        h2 {
-                                                                                                                                            font-size: 2em;
-                                                                                                                                                margin-bottom: 20px;
-                                                                                                                                                    font-weight: 600;
-                                                                                                                                                    }
-
-                                                                                                                                                    h3 {
-                                                                                                                                                        font-size: 1.5em;
-                                                                                                                                                            margin-bottom: 15px;
-                                                                                                                                                                padding-bottom: 10px;
-                                                                                                                                                                    font-weight: 500;
-                                                                                                                                                                        border-bottom: 2px solid var(--primary-color);
-                                                                                                                                                                        }
-
-                                                                                                                                                                        .project-card {
-                                                                                                                                                                            margin-bottom: 30px;
-                                                                                                                                                                                padding: 25px;
-                                                                                                                                                                                    background: var(--card-bg);
-                                                                                                                                                                                        border-radius: 8px;
-                                                                                                                                                                                            transition: transform 0.3s ease, box-shadow 0.3s ease;
-                                                                                                                                                                                            }
-
-                                                                                                                                                                                            .project-card:hover {
-                                                                                                                                                                                                transform: translateY(-5px);
-                                                                                                                                                                                                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                    .btn-download, .btn-primary {
-                                                                                                                                                                                                        display: inline-block;
-                                                                                                                                                                                                            padding: 12px 24px;
-                                                                                                                                                                                                                background: var(--button-bg);
-                                                                                                                                                                                                                    color: var(--button-text);
-                                                                                                                                                                                                                        border-radius: 6px;
-                                                                                                                                                                                                                            font-weight: 600;
-                                                                                                                                                                                                                                text-decoration: none;
-                                                                                                                                                                                                                                    transition: all 0.3s ease;
-                                                                                                                                                                                                                                        border: none;
-                                                                                                                                                                                                                                            cursor: pointer;
-                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                            .btn-download:hover, .btn-primary:hover {
-                                                                                                                                                                                                                                                transform: translateY(-2px);
-                                                                                                                                                                                                                                                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                    #contacto ul {
-                                                                                                                                                                                                                                                        display: flex;
-                                                                                                                                                                                                                                                            flex-wrap: wrap;
-                                                                                                                                                                                                                                                                justify-content: center;
-                                                                                                                                                                                                                                                                    gap: 20px;
-                                                                                                                                                                                                                                                                        padding: 0;
-                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                        #contacto li {
-                                                                                                                                                                                                                                                                            list-style: none;
-                                                                                                                                                                                                                                                                                margin: 0;
-                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                #contacto a {
-                                                                                                                                                                                                                                                                                    display: flex;
-                                                                                                                                                                                                                                                                                        align-items: center;
-                                                                                                                                                                                                                                                                                            gap: 8px;
-                                                                                                                                                                                                                                                                                                padding: 10px 15px;
-                                                                                                                                                                                                                                                                                                    border-radius: 6px;
-                                                                                                                                                                                                                                                                                                        background: var(--hover-bg);
-                                                                                                                                                                                                                                                                                                            color: var(--link-color);
-                                                                                                                                                                                                                                                                                                                transition: all 0.3s ease;
-                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                #contacto a:hover {
-                                                                                                                                                                                                                                                                                                                    text-decoration: none;
-                                                                                                                                                                                                                                                                                                                        transform: translateY(-3px);
-                                                                                                                                                                                                                                                                                                                            background: rgba(30, 96, 145, 0.2);
-                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                            footer {
-                                                                                                                                                                                                                                                                                                                                text-align: center;
-                                                                                                                                                                                                                                                                                                                                    padding: 25px;
-                                                                                                                                                                                                                                                                                                                                        background: var(--primary-color);
-                                                                                                                                                                                                                                                                                                                                            color: white;
-                                                                                                                                                                                                                                                                                                                                                margin-top: 50px;
-                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                /* Estilos para el selector de idioma */
-                                                                                                                                                                                                                                                                                                                                                .language-switch {
-                                                                                                                                                                                                                                                                                                                                                    position: absolute;
-                                                                                                                                                                                                                                                                                                                                                        top: 20px;
-                                                                                                                                                                                                                                                                                                                                                            right: 20px;
-                                                                                                                                                                                                                                                                                                                                                                font-size: 1.1em;
-                                                                                                                                                                                                                                                                                                                                                                    font-weight: bold;
-                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                    .lang-option {
-                                                                                                                                                                                                                                                                                                                                                                        padding: 5px 10px;
-                                                                                                                                                                                                                                                                                                                                                                            cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                                                                transition: all 0.3s ease;
-                                                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                                                .lang-option.active {
-                                                                                                                                                                                                                                                                                                                                                                                    font-weight: bold;
-                                                                                                                                                                                                                                                                                                                                                                                        color: var(--primary-color);
-                                                                                                                                                                                                                                                                                                                                                                                            background: rgba(30, 96, 145, 0.1);
-                                                                                                                                                                                                                                                                                                                                                                                                border-radius: 4px;
-                                                                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                                                                /* Estilos para el botón de tema */
-                                                                                                                                                                                                                                                                                                                                                                                                .btn-theme {
-                                                                                                                                                                                                                                                                                                                                                                                                    position: absolute;
-                                                                                                                                                                                                                                                                                                                                                                                                        top: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                            left: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                background: transparent;
-                                                                                                                                                                                                                                                                                                                                                                                                                    border: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                        font-size: 1.5em;
-                                                                                                                                                                                                                                                                                                                                                                                                                            cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                                                                                                                transition: transform 0.3s ease;
-                                                                                                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                .btn-theme:hover {
-                                                                                                                                                                                                                                                                                                                                                                                                                                    transform: scale(1.1);
-                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                    /* Responsive design */
-                                                                                                                                                                                                                                                                                                                                                                                                                                    @media (max-width: 768px) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                        .container {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                padding: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        margin: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    header {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            padding: 20px 0;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        h1 {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                font-size: 2em;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            #contacto ul {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    flex-direction: column;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            align-items: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .language-switch {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                position: static;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        margin-bottom: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .btn-theme {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            position: static;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin-bottom: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-#datetime {
-    font-size: 0.9em;
-    margin: 5px 0;
-    color: inherit;
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
+    --text-color: #333;
+    --background-light: #ccd9e0;
+    --background-dark: #a3b8c9;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --button-bg: #2a5298;
+    --button-text: white;
+    --link-color: #1e6091;
+    --hover-bg: rgba(30, 96, 145, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Añade esto a tu CSS */
+/* Estilos Base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--background-light), var(--background-dark));
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.5s ease, background 0.5s ease;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 40px;
+    position: relative;
+    border-bottom: 1px solid rgba(30, 60, 114, 0.1);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Tarjetas de Proyecto */
+.project-card {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(30, 60, 114, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Botones */
 .project-buttons {
     display: flex;
     gap: 15px;
@@ -217,32 +96,174 @@
     flex-wrap: wrap;
 }
 
+.btn-download,
 .btn-game {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     padding: 12px 24px;
-    background: #4CAF50;
-    color: white;
+    background: var(--button-bg);
+    color: var(--button-text);
     border-radius: 6px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
 }
 
+.btn-download:hover,
 .btn-game:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    background: #3e8e41;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    background: #1e3c72;
 }
 
+/* Sección de Contacto */
+#contacto ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+#contacto li {
+    list-style: none;
+    margin: 0;
+}
+
+#contacto a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: var(--hover-bg);
+    color: var(--link-color);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(30, 96, 145, 0.2);
+}
+
+#contacto a:hover {
+    text-decoration: none;
+    transform: translateY(-3px);
+    background: rgba(30, 96, 145, 0.2);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--primary-color);
+    color: white;
+    margin-top: 50px;
+    border-top: 1px solid rgba(162, 207, 254, 0.2);
+}
+
+#datetime {
+    font-size: 0.9em;
+    margin: 5px 0;
+    color: inherit;
+}
+
+/* Selector de Idioma */
+.language-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.lang-option {
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+}
+
+.lang-option.active {
+    font-weight: bold;
+    background: var(--hover-bg);
+    border-radius: 4px;
+    border: 1px solid rgba(30, 96, 145, 0.3);
+}
+
+/* Botón de Tema */
+.btn-theme {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+}
+
+.btn-theme:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-top: 40px;
+    }
+
     .project-buttons {
         flex-direction: column;
     }
-    
-    .btn-download, .btn-game {
+
+    .btn-download,
+    .btn-game {
         width: 100%;
-        text-align: center;
     }
+
+    .language-switch {
+        position: static;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .btn-theme {
+        position: static;
+        margin: 15px auto;
+        display: block;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.project-card {
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
 }
