@@ -75,17 +75,24 @@
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-content">
-                        <h3 id="dns-incident-title">Informe de Incidente DNS</h3>
-                        <p id="dns-incident-description">
-                            Análisis de tráfico de red ante caída del servicio DNS, incluyendo diagnóstico con tcpdump y recomendaciones.
-                        </p>
-                        <a href="reports/Informe_incidente_ciberseguridad.pdf" target="_blank" class="btn-download" id="dns-incident-link">
-                            <i class="fas fa-download"></i> Descargar Informe
-                        </a>
-                    </div>
-                </article>
+               <article class="project-card">
+    <div class="project-content">
+        <h3 id="incidentReportsTitle">Informes de Incidentes</h3>
+        <p id="incidentReportsDescription">
+            Selecciona un informe técnico relacionado con un incidente de seguridad para descargarlo.
+        </p>
+        <div class="playbook-selector">
+            <label for="incident-select" id="incidentSelectLabel">Elige un informe:</label>
+            <select id="incident-select" class="form-select">
+                <option value="reports/Informe_incidente_ciberaefuridad.pdf" id="option-dns">Caída del Servicio DNS</option>
+                <option value="reports/Tina_Calleja_Informe_Incidente_DoS_ViajesSolyMar.pdf" id="option-dos">Ataque DoS a Viajes Sol y Mar</option>
+            </select>
+            <button id="download-incident" class="btn-primary">
+                <i class="fas fa-file-download"></i> Descargar
+            </button>
+        </div>
+    </div>
+</article>
 
                 <article class="project-card">
                     <div class="project-content">
