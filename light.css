@@ -208,3 +208,41 @@
     margin: 5px 0;
     color: inherit;
 }
+
+/* Añade esto a tu CSS */
+.project-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-game {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: #3e8e41;
+}
+
+@media (max-width: 768px) {
+    .project-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-download, .btn-game {
+        width: 100%;
+        text-align: center;
+    }
+}
