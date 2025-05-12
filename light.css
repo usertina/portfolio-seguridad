@@ -82,13 +82,12 @@ h3 {
     box-shadow: 0 10px 20px var(--shadow-color);
 }
 
-/* ===== BOTONES ACTUALIZADOS ===== */
+/* Botones - Versión Escritorio */
 .project-buttons {
     display: flex;
-    gap: 12px; /* Espaciado uniforme entre botones */
+    gap: 12px;
     margin-top: 20px;
     flex-wrap: wrap;
-    align-items: center;
 }
 
 .btn-download,
@@ -97,7 +96,7 @@ h3 {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px 18px; /* Más compacto */
+    padding: 10px 18px;
     background: var(--button-bg);
     color: var(--button-text);
     border-radius: 6px;
@@ -106,8 +105,8 @@ h3 {
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    flex: 0 0 auto; /* No crece ni se encoge */
-    min-width: 140px; /* Ancho mínimo reducido */
+    flex: 0 0 auto;
+    min-width: 140px;
     text-align: center;
     font-size: 0.9em;
 }
@@ -208,7 +207,7 @@ footer {
     transform: scale(1.1);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE - VERSIÓN MÓVIL ===== */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
@@ -224,16 +223,24 @@ footer {
         margin-top: 40px;
     }
 
-    /* Botones en móvil */
+    /* BOTONES EN MÓVIL - CORRECCIÓN DE SEPARACIÓN */
     .project-buttons {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px !important; /* Aseguramos la separación */
+        margin-top: 15px;
     }
 
     .btn-download,
     .btn-game {
         width: 100%;
-        padding: 10px;
+        padding: 12px;
+        margin: 0 !important; /* Eliminamos márgenes que puedan interferir */
+    }
+
+    /* Asegurar espacio entre icono y texto */
+    .btn-download i,
+    .btn-game i {
+        margin-right: 8px;
     }
 
     .language-switch {
