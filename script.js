@@ -58,9 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
             'option-fuga': "Fuga de Datos",
             'option-ddos': "Denegación de Servicios (DDoS)",
             'download-playbook': "Descargar",
-            'dns-incident-title': "Informe de Incidente DNS",
-            'dns-incident-description': "Análisis de tráfico de red ante caída del servicio DNS, incluyendo diagnóstico con tcpdump y recomendaciones.",
-            'dns-incident-link': "Descargar Informe",
+           'incidentReportsTitle': "Informes de Incidentes",
+'incidentReportsDescription': "Selecciona un informe técnico relacionado con un incidente de seguridad para descargarlo.",
+'incidentSelectLabel': "Elige un informe:",
+'option-dns': "Caída del Servicio DNS",
+'option-dos': "Ataque DoS a Viajes Sol y Mar",
+'download-incident': "Descargar",
             'lan-budget-title': "Presupuesto de Red LAN",
             'lan-budget-description': "Diseño e instalación de una red LAN escalable para una empresa de tres plantas, con presupuesto detallado, equipamiento y mantenimiento.",
             'lan-budget-link': "Descargar Informe",
@@ -106,9 +109,12 @@ document.addEventListener("DOMContentLoaded", function () {
             'option-fuga': "Data Breach",
             'option-ddos': "Denial of Service (DDoS)",
             'download-playbook': "Download",
-            'dns-incident-title': "DNS Incident Report",
-            'dns-incident-description': "Network traffic analysis due to DNS service outage, including tcpdump diagnosis and recommendations.",
-            'dns-incident-link': "Download Report",
+           'incidentReportsTitle': "Incident Reports",
+'incidentReportsDescription': "Select a technical report related to a security incident to download.",
+'incidentSelectLabel': "Choose a report:",
+'option-dns': "DNS Service Outage",
+'option-dos': "DoS Attack on Viajes Sol y Mar",
+'download-incident': "Download",
             'lan-budget-title': "LAN Network Budget",
             'lan-budget-description': "Design and installation of a scalable LAN network for a three-story company, including detailed budget, equipment, and maintenance.",
             'lan-budget-link': "Download Report",
@@ -154,9 +160,12 @@ document.addEventListener("DOMContentLoaded", function () {
             'option-fuga': "Datu-ihesa",
             'option-ddos': "Zerbitzu-ukapen erasoa (DDoS)",
             'download-playbook': "Deskargatu",
-            'dns-incident-title': "DNS Gorabeheraren Txostena",
-            'dns-incident-description': "Sareko trafikoaren analisia DNS zerbitzuaren etenaren aurrean, tcpdump erabiliz eta gomendioekin.",
-            'dns-incident-link': "Txostena deskargatu",
+            'incidentReportsTitle': "Incident Reports",
+'incidentReportsDescription': "Select a technical report related to a security incident to download.",
+'incidentSelectLabel': "Choose a report:",
+'option-dns': "DNS Service Outage",
+'option-dos': "DoS Attack on Viajes Sol y Mar",
+'download-incident': "Download",
             'lan-budget-title': "LAN Sarearen Aurrekontua",
             'lan-budget-description': "Hiru solairuko enpresa baterako LAN sare eskalagarriaren diseinua eta instalazioa, aurrekontu zehatza, ekipamendua eta mantentzea barne.",
             'lan-budget-link': "Txostena deskargatu",
@@ -237,6 +246,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ========== PLAYBOOK DOWNLOAD ========== //
+document.getElementById("download-incident").addEventListener("click", function() {
+    const selectedIncident = document.getElementById("incident-select").value;
+    if (selectedIncident) {
+        const downloadBtn = this;
+        const states = {
+            es: ["Descargando...", "Descargado", "Descargar"],
+            en: ["Downloading...", "Downloaded", "Download"],
+            eu: ["Deskargatzen...", "Deskargatuta", "Deskargatu"]
+        };
+
+        downloadBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${states[currentLanguage][0]}`;
+
+        setTimeout(() => {
+            window.open(selectedIncident, "_blank");
+            downloadBtn.innerHTML = `<i class="fas fa-check"></i> ${states[currentLanguage][1]}`;
+
+            setTimeout(() => {
+                downloadBtn.innerHTML = `<i class="fas fa-file-download"></i> ${states[currentLanguage][2]}`;
+            }, 2000);
+        }, 500);
+    }
+});
     document.getElementById("download-playbook").addEventListener("click", function() {
         const selectedFile = document.getElementById("playbook-select").value;
         if (selectedFile) {
