@@ -1,288 +1,339 @@
 :root {
-        --primary-color: #a2cffe;
-            --secondary-color: #2a5298;
-                --text-color: white;
-                    --background-light: #1e3c72;
-                        --background-dark: #2a5298;
-                            --card-bg: rgba(0, 0, 0, 0.7);
-                                --button-bg: #a2cffe;
-                                    --button-text: #1e3c72;
-                                        --link-color: #a2cffe;
-                                            --hover-bg: rgba(162, 207, 254, 0.1);
-                                                --shadow-color: rgba(0, 0, 0, 0.5);
-                                                }
+    --primary-color: #a2cffe;
+    --secondary-color: #2a5298;
+    --text-color: white;
+    --background-light: #1e3c72;
+    --background-dark: #2a5298;
+    --card-bg: rgba(0, 0, 0, 0.7);
+    --button-bg: #a2cffe;
+    --button-text: #1e3c72;
+    --button-hover: #8fbde8;
+    --link-color: #a2cffe;
+    --hover-bg: rgba(162, 207, 254, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --button-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
 
-                                                body {
-                                                    font-family: 'Open Sans', sans-serif;
-                                                        margin: 0;
-                                                            padding: 0;
-                                                                background: linear-gradient(135deg, var(--background-light), var(--background-dark));
-                                                                    color: var(--text-color);
-                                                                        line-height: 1.6;
-                                                                            opacity: 0;
-                                                                                transition: opacity 0.5s ease, background 0.5s ease;
-                                                                                }
+/* Estilos Base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--background-light), var(--background-dark));
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.5s ease, background 0.5s ease;
+}
 
-                                                                                body.dark-theme {
-                                                                                    background: linear-gradient(135deg, var(--background-light), var(--background-dark));
-                                                                                    }
+body.dark-theme {
+    background: linear-gradient(135deg, var(--background-light), var(--background-dark));
+}
 
-                                                                                    .container {
-                                                                                        max-width: 1000px;
-                                                                                            margin: 30px auto;
-                                                                                                padding: 30px;
-                                                                                                    background: var(--card-bg);
-                                                                                                        border-radius: 12px;
-                                                                                                            box-shadow: 0 5px 15px var(--shadow-color);
-                                                                                                                backdrop-filter: blur(5px);
-                                                                                                                }
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    backdrop-filter: blur(5px);
+}
 
-                                                                                                                header {
-                                                                                                                    text-align: center;
-                                                                                                                        padding: 30px 0;
-                                                                                                                            margin-bottom: 40px;
-                                                                                                                                position: relative;
-                                                                                                                                    border-bottom: 1px solid rgba(162, 207, 254, 0.2);
-                                                                                                                                    }
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 40px;
+    position: relative;
+    border-bottom: 1px solid rgba(162, 207, 254, 0.2);
+}
 
-                                                                                                                                    h1, h2, h3 {
-                                                                                                                                        color: var(--primary-color);
-                                                                                                                                        }
+h1, h2, h3 {
+    color: var(--primary-color);
+}
 
-                                                                                                                                        h1 {
-                                                                                                                                            font-size: 2.8em;
-                                                                                                                                                margin-bottom: 10px;
-                                                                                                                                                    font-weight: 700;
-                                                                                                                                                        text-shadow: 0 2px 4px var(--shadow-color);
-                                                                                                                                                        }
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px var(--shadow-color);
+}
 
-                                                                                                                                                        h2 {
-                                                                                                                                                            font-size: 2em;
-                                                                                                                                                                margin-bottom: 20px;
-                                                                                                                                                                    font-weight: 600;
-                                                                                                                                                                    }
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
 
-                                                                                                                                                                    h3 {
-                                                                                                                                                                        font-size: 1.5em;
-                                                                                                                                                                            margin-bottom: 15px;
-                                                                                                                                                                                padding-bottom: 10px;
-                                                                                                                                                                                    font-weight: 500;
-                                                                                                                                                                                        border-bottom: 2px solid var(--primary-color);
-                                                                                                                                                                                        }
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    border-bottom: 2px solid var(--primary-color);
+}
 
-                                                                                                                                                                                        .project-card {
-                                                                                                                                                                                            margin-bottom: 30px;
-                                                                                                                                                                                                padding: 25px;
-                                                                                                                                                                                                    background: var(--card-bg);
-                                                                                                                                                                                                        border-radius: 8px;
-                                                                                                                                                                                                            transition: transform 0.3s ease, box-shadow 0.3s ease;
-                                                                                                                                                                                                                border: 1px solid rgba(162, 207, 254, 0.1);
-                                                                                                                                                                                                                }
+/* Tarjetas de Proyecto */
+.project-card {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(162, 207, 254, 0.1);
+}
 
-                                                                                                                                                                                                                .project-card:hover {
-                                                                                                                                                                                                                    transform: translateY(-5px);
-                                                                                                                                                                                                                        box-shadow: 0 10px 20px var(--shadow-color);
-                                                                                                                                                                                                                            border-color: rgba(162, 207, 254, 0.3);
-                                                                                                                                                                                                                            }
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    border-color: rgba(162, 207, 254, 0.3);
+}
 
-                                                                                                                                                                                                                            .btn-download, .btn-primary {
-                                                                                                                                                                                                                                display: inline-block;
-                                                                                                                                                                                                                                    padding: 12px 24px;
-                                                                                                                                                                                                                                        background: var(--button-bg);
-                                                                                                                                                                                                                                            color: var(--button-text);
-                                                                                                                                                                                                                                                border-radius: 6px;
-                                                                                                                                                                                                                                                    font-weight: 600;
-                                                                                                                                                                                                                                                        text-decoration: none;
-                                                                                                                                                                                                                                                            transition: all 0.3s ease;
-                                                                                                                                                                                                                                                                border: none;
-                                                                                                                                                                                                                                                                    cursor: pointer;
-                                                                                                                                                                                                                                                                    }
+/* Botones principales */
+.btn-download,
+.btn-game,
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--button-shadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 
-                                                                                                                                                                                                                                                                    .btn-download:hover, .btn-primary:hover {
-                                                                                                                                                                                                                                                                        transform: translateY(-2px);
-                                                                                                                                                                                                                                                                            box-shadow: 0 5px 15px var(--shadow-color);
-                                                                                                                                                                                                                                                                                background: #8fbde8;
-                                                                                                                                                                                                                                                                                }
+.btn-download:hover,
+.btn-game:hover,
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    background: var(--button-hover);
+}
 
-                                                                                                                                                                                                                                                                                #contacto ul {
-                                                                                                                                                                                                                                                                                    display: flex;
-                                                                                                                                                                                                                                                                                        flex-wrap: wrap;
-                                                                                                                                                                                                                                                                                            justify-content: center;
-                                                                                                                                                                                                                                                                                                gap: 20px;
-                                                                                                                                                                                                                                                                                                    padding: 0;
-                                                                                                                                                                                                                                                                                                    }
+/* Efecto especial para hacerlos "sobresalir" */
+.btn-download::after,
+.btn-game::after,
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+    z-index: -1;
+    border-radius: 4px;
+}
 
-                                                                                                                                                                                                                                                                                                    #contacto li {
-                                                                                                                                                                                                                                                                                                        list-style: none;
-                                                                                                                                                                                                                                                                                                            margin: 0;
-                                                                                                                                                                                                                                                                                                            }
+/* Selector de Playbook */
+.playbook-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-                                                                                                                                                                                                                                                                                                            #contacto a {
-                                                                                                                                                                                                                                                                                                                display: flex;
-                                                                                                                                                                                                                                                                                                                    align-items: center;
-                                                                                                                                                                                                                                                                                                                        gap: 8px;
-                                                                                                                                                                                                                                                                                                                            padding: 10px 15px;
-                                                                                                                                                                                                                                                                                                                                border-radius: 6px;
-                                                                                                                                                                                                                                                                                                                                    background: var(--hover-bg);
-                                                                                                                                                                                                                                                                                                                                        color: var(--link-color);
-                                                                                                                                                                                                                                                                                                                                            transition: all 0.3s ease;
-                                                                                                                                                                                                                                                                                                                                                border: 1px solid rgba(162, 207, 254, 0.2);
-                                                                                                                                                                                                                                                                                                                                                }
+#playbook-select {
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: rgba(162, 207, 254, 0.1);
+    color: var(--primary-color);
+    border: 1px solid rgba(162, 207, 254, 0.3);
+    flex-grow: 1;
+}
 
-                                                                                                                                                                                                                                                                                                                                                #contacto a:hover {
-                                                                                                                                                                                                                                                                                                                                                    text-decoration: none;
-                                                                                                                                                                                                                                                                                                                                                        transform: translateY(-3px);
-                                                                                                                                                                                                                                                                                                                                                            background: rgba(162, 207, 254, 0.2);
-                                                                                                                                                                                                                                                                                                                                                                box-shadow: 0 5px 15px var(--shadow-color);
-                                                                                                                                                                                                                                                                                                                                                                }
+#playbook-select option {
+    background: #1e3c72;
+    color: white;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                footer {
-                                                                                                                                                                                                                                                                                                                                                                    text-align: center;
-                                                                                                                                                                                                                                                                                                                                                                        padding: 25px;
-                                                                                                                                                                                                                                                                                                                                                                            background: rgba(30, 60, 114, 0.8);
-                                                                                                                                                                                                                                                                                                                                                                                color: white;
-                                                                                                                                                                                                                                                                                                                                                                                    margin-top: 50px;
-                                                                                                                                                                                                                                                                                                                                                                                        border-top: 1px solid rgba(162, 207, 254, 0.2);
-                                                                                                                                                                                                                                                                                                                                                                                        }
+/* Sección de Contacto */
+#contacto ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                        /* Selector de idioma */
-                                                                                                                                                                                                                                                                                                                                                                                        .language-switch {
-                                                                                                                                                                                                                                                                                                                                                                                            position: absolute;
-                                                                                                                                                                                                                                                                                                                                                                                                top: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                    right: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                        font-size: 1.1em;
-                                                                                                                                                                                                                                                                                                                                                                                                            font-weight: bold;
-                                                                                                                                                                                                                                                                                                                                                                                                            }
+#contacto li {
+    list-style: none;
+    margin: 0;
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                            .lang-option {
-                                                                                                                                                                                                                                                                                                                                                                                                                padding: 5px 10px;
-                                                                                                                                                                                                                                                                                                                                                                                                                    cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                                                                                                        transition: all 0.3s ease;
-                                                                                                                                                                                                                                                                                                                                                                                                                            color: var(--primary-color);
-                                                                                                                                                                                                                                                                                                                                                                                                                            }
+#contacto a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: var(--hover-bg);
+    color: var(--link-color);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(162, 207, 254, 0.2);
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                                            .lang-option.active {
-                                                                                                                                                                                                                                                                                                                                                                                                                                font-weight: bold;
-                                                                                                                                                                                                                                                                                                                                                                                                                                    background: var(--hover-bg);
-                                                                                                                                                                                                                                                                                                                                                                                                                                        border-radius: 4px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                            border: 1px solid rgba(162, 207, 254, 0.3);
-                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+#contacto a:hover {
+    text-decoration: none;
+    transform: translateY(-3px);
+    background: rgba(162, 207, 254, 0.2);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                            /* Botón de tema */
-                                                                                                                                                                                                                                                                                                                                                                                                                                            .btn-theme {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                position: absolute;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    top: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        left: 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            background: transparent;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                border: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    font-size: 1.5em;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            transition: transform 0.3s ease;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                color: var(--primary-color);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(30, 60, 114, 0.8);
+    color: white;
+    margin-top: 50px;
+    border-top: 1px solid rgba(162, 207, 254, 0.2);
+}
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .btn-theme:hover {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    transform: scale(1.1) rotate(15deg);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    /* Selector de playbook */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .playbook-selector {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: flex;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            gap: 10px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                align-items: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    flex-wrap: wrap;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    #playbook-select {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 10px 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            border-radius: 6px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                background: rgba(162, 207, 254, 0.1);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    color: var(--primary-color);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border: 1px solid rgba(162, 207, 254, 0.3);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            flex-grow: 1;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            #playbook-select option {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                background: #1e3c72;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    color: white;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    /* Efectos especiales */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ::selection {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background: var(--primary-color);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            color: var(--button-text);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /* Responsive */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @media (max-width: 768px) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .container {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                margin: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            header {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    padding: 20px 0;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                h1 {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        font-size: 2em;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    #contacto ul {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            flex-direction: column;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    align-items: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .language-switch {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        position: static;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                margin-bottom: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        display: flex;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                justify-content: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        gap: 10px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .btn-theme {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            position: static;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin: 15px auto;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            display: block;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .playbook-selector {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                flex-direction: column;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            #playbook-select {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    width: 100%;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                #download-playbook {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width: 100%;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /* Animaciones */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @keyframes fadeIn {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                from { opacity: 0; }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    to { opacity: 1; }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    body {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        animation: fadeIn 0.5s ease forwards;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .project-card {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            animation: fadeIn 0.8s ease forwards;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                animation-delay: 0.3s;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    opacity: 0;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-/* Añade esto a ambos archivos (light.css y dark.css) */
 #datetime {
     font-size: 0.9em;
     margin: 5px 0;
     color: inherit;
 }
 
-/* Para modo oscuro específicamente */
-.dark-theme #datetime {
-    color: #e0e0e0;
+/* Selector de Idioma */
+.language-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.lang-option {
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+}
+
+.lang-option.active {
+    font-weight: bold;
+    background: var(--hover-bg);
+    border-radius: 4px;
+    border: 1px solid rgba(162, 207, 254, 0.3);
+}
+
+/* Botón de Tema */
+.btn-theme {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+}
+
+.btn-theme:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+/* ===== RESPONSIVE - VERSIÓN MÓVIL ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-top: 40px;
+    }
+
+    /* BOTONES EN MÓVIL - ESTILO UNIFICADO */
+    .btn-download,
+    .btn-game,
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        margin: 5px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: var(--button-bg);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Contenedores de botones */
+    .project-buttons,
+    .playbook-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Selector de playbook en móvil */
+    .playbook-selector {
+        width: 100%;
+    }
+
+    #playbook-select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Asegurar espacio entre icono y texto */
+    .btn-download i,
+    .btn-game i,
+    .btn-primary i {
+        margin-right: 8px;
+    }
+
+    .language-switch {
+        position: static;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .btn-theme {
+        position: static;
+        margin: 15px auto;
+        display: block;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.project-card {
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: var(--button-text);
 }
