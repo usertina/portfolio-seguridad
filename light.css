@@ -144,13 +144,20 @@ h3 {
     flex-wrap: wrap;
 }
 
-#playbook-select {
+#playbook-select,
+#incident-select {
     padding: 10px 15px;
     border-radius: 6px;
     background: rgba(30, 60, 114, 0.1);
     color: var(--primary-color);
     border: 1px solid rgba(30, 60, 114, 0.3);
     flex-grow: 1;
+}
+
+#playbook-select option,
+#incident-select option {
+    background: #1e3c72;
+    color: white;
 }
 
 #playbook-select option {
