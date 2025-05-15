@@ -1,4 +1,4 @@
-1D:root {
+de1D:root {
     --primary-color: #a2cffe;
     --secondary-color: #2a5298;
     --text-color: white;
@@ -342,23 +342,5 @@ body {
 
 ::selection {
     background: var(--primary-color);
-    color: var(--button-text);
-}
-/* Ajustes específicos para móviles - Selector de incidentes */
-@media (max-width: 768px) {
-    #incident-select {
-        white-space: normal;
-        height: auto;
-        min-height: 40px;
-        padding: 8px 12px;
-    }
-    
-    .playbook-selector {
-        flex-direction: column;
-    }
-    
-    #incident-select option {
-        white-space: normal;
-        word-wrap: break-word;
-    }
+    color: var(--button-tex 
 }
