@@ -1,4 +1,4 @@
-de1D:root {
+:root {
     --primary-color: #a2cffe;
     --secondary-color: #2a5298;
     --text-color: white;
@@ -342,5 +342,5 @@ body {
 
 ::selection {
     background: var(--primary-color);
-    color: var(--button-tex 
+    color: var(--button-text);
 }
