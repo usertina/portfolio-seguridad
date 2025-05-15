@@ -283,4 +283,23 @@ body {
 ::selection {
     background: var(--primary-color);
     color: var(--button-text);
+
+@media (max-width: 768px) {
+    /* Elimina el estilo de tarjeta solo para estas secciones */
+    #incidentReportsTitle,
+    #lan-budget-title {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 15px 0 !important;
+    }
+    
+    /* Elimina el fondo del contenedor padre */
+    #incidentReportsTitle + .playbook-selector,
+    #lan-budget-title ~ .btn-download {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
 }
