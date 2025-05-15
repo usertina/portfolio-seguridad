@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 'incidentSelectLabel': "Elige un informe:",
 'option-dns': "Caída del Servicio DNS",
 'option-dos': "Ataque DoS a Viajes Sol y Mar",
- 'option-hardening': "Endurecimiento de SO y Respuesta a Incidente",
+   'option-hardening': "Hardening SO + Respuesta Incidente",
 'download-incident': "Descargar",
             'lan-budget-title': "Presupuesto de Red LAN",
             'lan-budget-description': "Diseño e instalación de una red LAN escalable para una empresa de tres plantas, con presupuesto detallado, equipamiento y mantenimiento.",
