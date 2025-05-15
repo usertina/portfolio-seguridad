@@ -39,9 +39,9 @@
                         <a href="reports/E1_Tina_Calleja_Informe_seguridad_informatica.pdf" target="_blank" class="btn-download" id="view-report-link">
                             <i class="fas fa-download"></i> Descargar Informe
                         </a>
-            <a href="https://juego-seguridad-informatica.netlify.app/" target="_blank" class="btn-game" id="game-link">
-                <i class="fas fa-gamepad"></i> <span class="game-text">Juego</span>
-            </a>
+                        <a href="https://juego-seguridad-informatica.netlify.app/" target="_blank" class="btn-game" id="game-link">
+                            <i class="fas fa-gamepad"></i> <span class="game-text">Juego</span>
+                        </a>
                     </div>
                 </article>
 
@@ -73,27 +73,28 @@
                             </button>
                         </div>
                     </div>
+                </article>
 
- <article class="project-card">
-    <div class="project-content">
-        <h3 id="incidentReportsTitle">Informes de Incidentes</h3>
-        <p id="incidentReportsDescription">
-            Selecciona un informe técnico relacionado con un incidente de seguridad para descargarlo.
-        </p>
-        <div class="playbook-selector">
-            <select id="incident-select" class="form-select">
-                <option value="reports/tina_calleja_Informe_incidente_ciberseguridad.pdf" id="option-dns">Caída del Servicio DNS</option>
-                <option value="reports/Tina_Calleja_Informe_Incidente_DoS_ViajesSolyMar.pdf" id="option-dos">Ataque DoS a Viajes Sol y Mar</option>
-                <option value="reports/Tina_Calleja_Informe_de_Endurecimiento_del_S.O.pdf" id="option-hardening">
-                    Hardening SO + Respuesta Incidente
-                </option>
-            </select>
-            <button id="download-incident" class="btn-primary">
-                <i class="fas fa-file-download"></i> <span id="download-incident-text">Descargar</span>
-            </button>
-        </div>
-    </div>
-</article>                   <article class="project-card">
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3 id="incidentReportsTitle">Informes de Incidentes</h3>
+                        <p id="incidentReportsDescription">
+                            Selecciona un informe técnico relacionado con un incidente de seguridad para descargarlo.
+                        </p>
+                        <div class="playbook-selector">
+                            <select id="incident-select" class="form-select">
+                                <option value="reports/tina_calleja_Informe_incidente_ciberseguridad.pdf" id="option-dns">Caída del Servicio DNS</option>
+                                <option value="reports/Tina_Calleja_Informe_Incidente_DoS_ViajesSolyMar.pdf" id="option-dos">Ataque DoS a Viajes Sol y Mar</option>
+                                <option value="reports/Tina_Calleja_Informe_de_Endurecimiento_del_S.O.pdf" id="option-hardening">Hardening SO + Respuesta Incidente</option>
+                            </select>
+                            <button id="download-incident" class="btn-primary">
+                                <i class="fas fa-file-download"></i> <span id="download-incident-text">Descargar</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
                     <div class="project-content">
                         <h3 id="lan-budget-title">Presupuesto de Red LAN</h3>
                         <p id="lan-budget-description">
@@ -134,19 +135,20 @@
             </ul>
         </section>
     </main>
-<footer>
-    <div class="footer-content">
-        <p id="copyright-text">
-            &copy; <span id="current-year"></span> Tina Calleja - <span id="portfolio-text">Portfolio de Seguridad Informática</span>
-        </p>
-        <div id="datetime">
-            <span id="current-date"></span> | 
-            <span id="current-time"></span>
+
+    <footer>
+        <div class="footer-content">
+            <p id="copyright-text">
+                &copy; <span id="current-year"></span> Tina Calleja - <span id="portfolio-text">Portfolio de Seguridad Informática</span>
+            </p>
+            <div id="datetime">
+                <span id="current-date"></span> | 
+                <span id="current-time"></span>
+            </div>
+            <p id="legal-links">
+                <a href="mailto:agustinacalleja@gmail.com" id="footer-email">Contacto</a>
+            </p>
         </div>
-        <p id="legal-links">
-            <a href="mailto:agustinacalleja@gmail.com" id="footer-email">Contacto</a>
-        </p>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>
