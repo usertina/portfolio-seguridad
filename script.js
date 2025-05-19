@@ -202,8 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        second: '2-digit',
-        timeZone: lang === 'en' ? 'UTC' : 'Europe/Madrid'
+        second: '2-digit'
     };
 
     try {
